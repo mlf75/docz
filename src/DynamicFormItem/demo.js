@@ -4,11 +4,11 @@
  * @description
  */
 
-import React, { Component, createContext } from "react";
-import { Form, notification, Button } from "antd";
-import CustomerFormItem from "./index";
-import _isEmpty from "lodash/isEmpty";
-import schema from "./schema";
+import React, { Component, createContext } from 'react';
+import { Form, notification, Button } from 'antd';
+import CustomerFormItem from './index';
+import _isEmpty from 'lodash/isEmpty';
+import schema from './schema';
 
 export default class Demo extends Component {
   constructor(props) {
@@ -39,20 +39,20 @@ export default class Demo extends Component {
     });
   };
 
-  handleSubmit = (values) => {
+  handleSubmit = values => {
     const _values = {
       ...this.state.formData,
       ...values,
     };
-    console.log("postData", _values);
+    console.log('postData', _values);
   };
 
   // 获取进入表单的表单项初始值，新增从 settings 获取初始值，编辑从详情里获取
-  getDefaultValue = (detail) => {
+  getDefaultValue = detail => {
     let result = {};
-    const settings = schema;
-    Object.values(settings).forEach((value) => {
-      value.fields.forEach((item) => {
+    const settings = this.props.schema;
+    Object.values(settings).forEach(value => {
+      value.fields.forEach(item => {
         if (!detail || _isEmpty(detail)) {
           result[item.name] = item.defaultValue;
         } else {
@@ -79,7 +79,7 @@ export default class Demo extends Component {
         onFinish={this.handleSubmit}
       >
         <CustomerFormItem
-          settings={schema}
+          settings={this.props.schema}
           form={this.state.form}
           formData={this.state.formData}
           getValue={this.handleGetValue}
