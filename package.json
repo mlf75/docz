@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "antd": "^4.6.6",
+    "fr-generator": "^0.5.5",
     "react": "^16.12.0"
   },
   "devDependencies": {
