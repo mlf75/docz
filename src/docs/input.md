@@ -59,6 +59,33 @@ const schema = {
 export default () => <Demo schema={schema} />;
 ```
 
+输入框必填:
+
+```jsx
+import React from 'react';
+//import Demo  from "../../src/DynamicFormItem/Demo"
+import { Demo } from 'componentDoc';
+
+const schema = {
+  basicUse: {
+    title: '输入框必填',
+    fields: [
+      {
+        name: 'disabled',
+        label: '输入框',
+        widget: 'input',
+        required: true,
+        options: {
+          placeholder: 'Basic usage',
+        },
+      },
+    ],
+  },
+};
+
+export default () => <Demo schema={schema} />;
+```
+
 ## Props
 
 | 参数         | 说明               | 类型    | 默认值      | 是否必填 |
