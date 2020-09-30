@@ -101,7 +101,8 @@ export default function CustomerFormItem(props) {
     //展示状态，把数据平铺开
     if (obj.widget === 'select' || obj.widget === 'radio') {
       let source;
-      if (status === 'show') {
+      if (status !== 'show') {
+        console.log(value);
         return value;
       } else {
         source = value && obj.options.data ? obj.options.data[value] : '';
@@ -307,6 +308,7 @@ export default function CustomerFormItem(props) {
                     >
                       {obj.label || ''}:
                     </p>
+                    {getSource(obj)}
                   </div>
                 );
               }

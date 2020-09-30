@@ -1,5 +1,6 @@
 ---
-title: Select输入框
+title: Select选择
+order: 3
 nav:
   title: 组件
   order: 2
@@ -243,6 +244,67 @@ const schema = {
 
 export default () => <Demo schema={schema} />;
 ```
+
+### 展示状态(默认显示文本)
+
+```jsx
+import React from 'react';
+import Demo from '../../src/DynamicFormItem/Demo';
+
+const schema = {
+  basicUse: {
+    title: '基本使用',
+    fields: [
+      {
+        widget: 'select',
+        name: 'diasbledStatus',
+        label: '行政区划',
+        disabled: true,
+        defaultValue: '1',
+        help: '可填写字段说明',
+        options: {
+          data: {
+            1: '重庆市',
+            2: '南岸区',
+            3: '渝中区',
+            4: '渝北区',
+          },
+        },
+      },
+    ],
+  },
+};
+
+export default () => <Demo schema={schema} status="show" />;
+```
+
+### 远程获取数据
+
+```jsx
+import React from 'react';
+import Demo from '../../src/DynamicFormItem/Demo';
+
+const schema = {
+  basicUse: {
+    title: '基本使用',
+    fields: [
+      {
+        name: 'database',
+        label: '数据库',
+        widget: 'select',
+        required: true,
+        options: {
+          remote: { url: '/itemTable/getDbOptions' },
+        },
+      },
+    ],
+  },
+};
+
+export default () => <Demo schema={schema} />;
+```
+
+> tips: 文档中的远程获取数据 Select 下拉框仅为异步模拟，并未发出真实请求。具体实现请参考具体项目
 
 ## Props
 

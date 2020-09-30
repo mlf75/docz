@@ -1,5 +1,6 @@
 ---
 title: Radio单选框
+order: 4
 nav:
   title: 组件
   order: 2
@@ -159,6 +160,36 @@ const schema = {
 };
 
 export default () => <Demo schema={schema} />;
+```
+
+### 展示状态(默认显示文本)
+
+```jsx
+import React from 'react';
+import Demo from '../../src/DynamicFormItem/Demo';
+
+const schema = {
+  basicUse: {
+    title: '基本使用',
+    fields: [
+      {
+        name: 'validState',
+        label: '有效',
+        widget: 'radio',
+        disabled: true,
+        defaultValue: 1,
+        options: {
+          data: {
+            0: '否',
+            1: '是',
+          },
+        },
+      },
+    ],
+  },
+};
+
+export default () => <Demo schema={schema} status="show" />;
 ```
 
 ## Props

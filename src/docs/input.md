@@ -1,5 +1,6 @@
 ---
 title: Input输入框
+order: 1
 nav:
   title: 组件
   order: 2
@@ -178,6 +179,33 @@ const schema = {
 };
 
 export default () => <Demo schema={schema} />;
+```
+
+### 展示状态的输入框(默认文本展示)
+
+```jsx
+import React from 'react';
+import { Demo } from 'componentDoc';
+
+const schema = {
+  basicUse: {
+    title: '自定义样式输入框',
+    fields: [
+      {
+        name: 'showStatus',
+        label: '输入框',
+        widget: 'input',
+        required: true,
+        defaultValue: '展示状态下的文本',
+        options: {
+          placeholder: 'Basic usage',
+        },
+      },
+    ],
+  },
+};
+
+export default () => <Demo schema={schema} status="show" />;
 ```
 
 ## Props
