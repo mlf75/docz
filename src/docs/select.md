@@ -1,11 +1,11 @@
 ---
-title: Input输入框
+title: Select输入框
 nav:
   title: 组件
   order: 2
 ---
 
-## Input 输入框
+## Select 选择框
 
 ### 基本使用
 
@@ -20,9 +20,15 @@ const schema = {
       {
         name: 'base',
         label: '输入框',
-        widget: 'input',
+        widget: 'select',
         options: {
           placeholder: 'Basic usage',
+          data: {
+            1: '重庆市',
+            2: '南岸区',
+            3: '渝中区',
+            4: '渝北区',
+          },
         },
       },
     ],
@@ -47,10 +53,16 @@ const schema = {
       {
         name: 'disabled',
         label: '输入框',
-        widget: 'input',
+        widget: 'select',
         disabled: true,
         options: {
           placeholder: 'Basic usage',
+          data: {
+            1: '重庆市',
+            2: '南岸区',
+            3: '渝中区',
+            4: '渝北区',
+          },
         },
       },
     ],
@@ -60,7 +72,7 @@ const schema = {
 export default () => <Demo schema={schema} />;
 ```
 
-### 输入框必填
+### 选择框必填
 
 `设置required: true`
 
@@ -70,15 +82,21 @@ import { Demo } from 'componentDoc';
 
 const schema = {
   basicUse: {
-    title: '输入框必填',
+    title: '选择框必填',
     fields: [
       {
         name: 'required',
-        label: '输入框',
-        widget: 'input',
+        label: '选择框',
+        widget: 'select',
         required: true,
         options: {
           placeholder: 'Basic usage',
+          data: {
+            1: '重庆市',
+            2: '南岸区',
+            3: '渝中区',
+            4: '渝北区',
+          },
         },
       },
     ],
@@ -88,7 +106,7 @@ const schema = {
 export default () => <Demo schema={schema} />;
 ```
 
-### 带有帮助信息的输入框
+### 带有帮助信息的选择框
 
 `设置help说明`
 
@@ -103,11 +121,17 @@ const schema = {
       {
         name: 'help',
         label: '输入框',
-        widget: 'input',
+        widget: 'select',
         required: true,
         help: '帮助信息输入框',
         options: {
           placeholder: 'Basic usage',
+          data: {
+            1: '重庆市',
+            2: '南岸区',
+            3: '渝中区',
+            4: '渝北区',
+          },
         },
       },
     ],
@@ -132,15 +156,15 @@ const schema = {
       {
         name: 'rules',
         label: '输入框',
-        widget: 'input',
-        rules: [
-          {
-            pattern: /^[0-9]+$/,
-            message: '序号为数值类型',
-          },
-        ],
+        widget: 'select',
         options: {
           placeholder: 'Basic usage',
+          data: {
+            1: '重庆市',
+            2: '南岸区',
+            3: '渝中区',
+            4: '渝北区',
+          },
         },
       },
     ],
@@ -165,12 +189,52 @@ const schema = {
       {
         name: 'style',
         label: '输入框',
-        widget: 'input',
+        widget: 'select',
         style: {
           width: '100%',
         },
         options: {
           placeholder: 'Basic usage',
+          data: {
+            1: '重庆市',
+            2: '南岸区',
+            3: '渝中区',
+            4: '渝北区',
+          },
+        },
+      },
+    ],
+  },
+};
+
+export default () => <Demo schema={schema} />;
+```
+
+### 设置选择默认值
+
+`设置组件defaultValue: '重庆市'`
+
+```jsx
+import React from 'react';
+import { Demo } from 'componentDoc';
+
+const schema = {
+  basicUse: {
+    title: '固定大小文本框',
+    fields: [
+      {
+        name: 'formElementOpts',
+        label: '文本框',
+        defaultValue: '重庆市',
+        widget: 'select',
+        options: {
+          placeholder: 'Basic usage',
+          data: {
+            1: '重庆市',
+            2: '南岸区',
+            3: '渝中区',
+            4: '渝北区',
+          },
         },
       },
     ],
@@ -191,16 +255,17 @@ export default () => <Demo schema={schema} />;
 | required     | 是否必填           | boolean | false       | false    |
 | disabled     | 表单项组件是否可用 | boolean | -           | false    |
 | help         | 帮助信息           | string  | -           | false    |
-| rule         | 表单项验证规则     | array   | -           | false    |
 | style        | 表单项 ui 样式     | object  | width:"50%" | false    |
 | options      | 组件额外配置       | object  | -           | false    |
 
 ## Option Props
 
-| 参数            | 说明                                                                                       | 类型    | 默认值 | 是否必填 |
-| --------------- | ------------------------------------------------------------------------------------------ | ------- | ------ | -------- |
-| formElementOpts | 设置具体表单元素的配置属性，例如 formElement: {placeholder: '',disabled: true,autoSize:{}} | object  | -      | false    |
-| placeholder     | 表单项输入说明                                                                             | string  | -      | false    |
-| disabledInEdit  | 在编辑时组件是否可用                                                                       | boolean | -      | false    |
-| uiWidget        | 自定义展示时需要渲染的 ui 组件                                                             | string  | -      | false    |
-| showLabel       | 在编辑时是否展示 label 说明                                                                | boolean | -      | false    |
+| 参数            | 说明                                                                                                            | 类型    | 默认值 | 是否必填 |
+| --------------- | --------------------------------------------------------------------------------------------------------------- | ------- | ------ | -------- |
+| data            | 数据列表, 异步获取数据时是非必填项                                                                              | object  | -      | true     |
+| remote          | 当 select 组件数据需要异步获取时，需要配置的请求信息，例如：ajax: {url: '/itemTable/getDbOptions', params: {}}, | object  | -      | false    |
+| formElementOpts | 设置具体表单元素的配置属性，例如 formElement: {placeholder: '',disabled: true}                                  | object  | -      | false    |
+| placeholder     | 表单项输入说明                                                                                                  | string  | -      | false    |
+| disabledInEdit  | 在编辑时组件是否可用                                                                                            | boolean | -      | false    |
+| uiWidget        | 自定义展示时需要渲染的 ui 组件                                                                                  | string  | -      | false    |
+| showLabel       | 在编辑时是否展示 label 说明                                                                                     | boolean | -      | false    |

@@ -7,7 +7,7 @@ nav:
 
 ## Textarea 文本框
 
-基本使用:
+### 基本使用
 
 ```jsx
 import React from 'react';
@@ -32,7 +32,9 @@ const schema = {
 export default () => <Demo schema={schema} />;
 ```
 
-禁止使用状态:
+### 禁止使用状态
+
+`设置disabled: true`
 
 ```jsx
 import React from 'react';
@@ -58,7 +60,9 @@ const schema = {
 export default () => <Demo schema={schema} />;
 ```
 
-文本框必填:
+###　文本框必填
+
+`设置required: true`
 
 ```jsx
 import React from 'react';
@@ -84,7 +88,9 @@ const schema = {
 export default () => <Demo schema={schema} />;
 ```
 
-带有帮助信息的文本框:
+### 带有帮助信息文本框
+
+`设置help说明`
 
 ```jsx
 import React from 'react';
@@ -111,7 +117,9 @@ const schema = {
 export default () => <Demo schema={schema} />;
 ```
 
-带验证规则文本框:
+### 带验证规则文本框
+
+`设置rules中校验规则，pattern正则表达式；message校验说明`
 
 ```jsx
 import React from 'react';
@@ -142,7 +150,9 @@ const schema = {
 export default () => <Demo schema={schema} />;
 ```
 
-带自定义样式的文本框:
+### 带自定义样式的文本框
+
+`设置style中样式`
 
 ```jsx
 import React from 'react';
@@ -170,7 +180,9 @@ const schema = {
 export default () => <Demo schema={schema} />;
 ```
 
-设置文本框固定大小:
+### 设置文本框固定大小
+
+`设置组件额外配置formElementOpts`
 
 ```jsx
 import React from 'react';
