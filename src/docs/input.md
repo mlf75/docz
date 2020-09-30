@@ -11,7 +11,7 @@ nav:
 
 ```jsx
 import React from 'react';
-import Demo from '../../src/DynamicFormItem/Demo';
+import { Demo } from 'componentDoc';
 
 const schema = {
   basicUse: {
@@ -36,7 +36,6 @@ export default () => <Demo schema={schema} />;
 
 ```jsx
 import React from 'react';
-//import Demo  from "../../src/DynamicFormItem/Demo"
 import { Demo } from 'componentDoc';
 
 const schema = {
@@ -63,7 +62,6 @@ export default () => <Demo schema={schema} />;
 
 ```jsx
 import React from 'react';
-//import Demo  from "../../src/DynamicFormItem/Demo"
 import { Demo } from 'componentDoc';
 
 const schema = {
@@ -71,7 +69,7 @@ const schema = {
     title: '输入框必填',
     fields: [
       {
-        name: 'disabled',
+        name: 'required',
         label: '输入框',
         widget: 'input',
         required: true,
@@ -90,7 +88,6 @@ export default () => <Demo schema={schema} />;
 
 ```jsx
 import React from 'react';
-//import Demo  from "../../src/DynamicFormItem/Demo"
 import { Demo } from 'componentDoc';
 
 const schema = {
@@ -98,11 +95,70 @@ const schema = {
     title: '帮助信息输入框',
     fields: [
       {
-        name: 'disabled',
+        name: 'help',
         label: '输入框',
         widget: 'input',
         required: true,
         help: '帮助信息输入框',
+        options: {
+          placeholder: 'Basic usage',
+        },
+      },
+    ],
+  },
+};
+
+export default () => <Demo schema={schema} />;
+```
+
+带验证规则输入框:
+
+```jsx
+import React from 'react';
+import { Demo } from 'componentDoc';
+
+const schema = {
+  basicUse: {
+    title: '验证规则输入框',
+    fields: [
+      {
+        name: 'rules',
+        label: '输入框',
+        widget: 'input',
+        rules: [
+          {
+            pattern: /^[0-9]+$/,
+            message: '序号为数值类型',
+          },
+        ],
+        options: {
+          placeholder: 'Basic usage',
+        },
+      },
+    ],
+  },
+};
+
+export default () => <Demo schema={schema} />;
+```
+
+带自定义样式的输入框:
+
+```jsx
+import React from 'react';
+import { Demo } from 'componentDoc';
+
+const schema = {
+  basicUse: {
+    title: '自定义样式输入框',
+    fields: [
+      {
+        name: 'style',
+        label: '输入框',
+        widget: 'input',
+        style: {
+          width: '100%',
+        },
         options: {
           placeholder: 'Basic usage',
         },
