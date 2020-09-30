@@ -1,5 +1,5 @@
 ---
-title: TextArea文本域
+title: Textａrea文本
 order: 2
 nav:
   title: 组件
