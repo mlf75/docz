@@ -6,7 +6,7 @@ hero:
   desc: 基于 dumi、为组件开发场景而生的文档工具
   actions:
     - text: 快速上手
-      link: /zh-CN/guide/getting-started
+      link: /docs/input
 features:
   - icon: https://gw.alipayobjects.com/zos/bmw-prod/881dc458-f20b-407b-947a-95104b5ec82b/k79dm8ih_w144_h144.png
     title: 标题1
