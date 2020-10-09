@@ -213,7 +213,7 @@ export default () => <Demo schema={schema} />;
 
 ### 设置选择默认值
 
-`设置组件defaultValue: '重庆市'`
+`设置组件默认值defaultValue: '重庆市'`
 
 ```jsx
 import React from 'react';
