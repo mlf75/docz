@@ -1,5 +1,5 @@
 ---
-title: Markdown富文本编辑输入框
+title: Markdown编辑器
 order: 1
 nav:
   title: 组件
@@ -16,11 +16,11 @@ import Demo from '../../src/DynamicFormItem/Demo';
 
 const schema = {
   basicUse: {
-    title: '基本使用',
+    title: '',
     fields: [
       {
         name: 'markdown',
-        label: 'Markdown富文本编辑输入框',
+        label: '',
         widget: 'sampleData',
         required: true,
         hidden: false,
@@ -45,11 +45,11 @@ import { Demo } from 'componentDoc';
 
 const schema = {
   basicUse: {
-    title: '默认数据',
+    title: '',
     fields: [
       {
         name: 'disabled',
-        label: 'Markdown富文本编辑输入框',
+        label: '',
         widget: 'sampleData',
         defaultValue: '这是默认数据',
         options: {
