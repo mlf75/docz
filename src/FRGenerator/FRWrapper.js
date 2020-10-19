@@ -93,11 +93,6 @@ function Wrapper(
   };
 
   const toggleModal = () => {
-    console.log(
-      'fr displaySchemaString-------',
-      JSON.parse(displaySchemaString),
-    );
-    // console.log('displaySchemaString----', transformToFun(JSON.parse(displaySchemaString).schema));
     setLocal({ showModal: !local.showModal });
   };
   const toggleModal2 = () => setLocal({ showModal2: !local.showModal2 });
@@ -154,7 +149,6 @@ function Wrapper(
     if (!isNewVersion) {
       displaySchema = newSchemaToOld(displaySchema);
     }
-    console.log('fr displaySchema', displaySchema);
     displaySchemaString = JSON.stringify(displaySchema, null, 2);
   } catch (error) {}
 
@@ -310,7 +304,12 @@ function Wrapper(
               <div className="mt3">
                 <TextArea
                   style={{ fontSize: 12 }}
-                  value={displaySchemaString}
+                  // value={displaySchemaString}
+                  value={JSON.stringify(
+                    transformToFun(JSON.parse(displaySchemaString).schema),
+                    null,
+                    2,
+                  )}
                   autoSize={{ minRows: 10, maxRows: 30 }}
                 />
               </div>
