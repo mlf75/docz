@@ -1,5 +1,5 @@
 ---
-title: 资源树多选
+title: 树多选
 order: 6
 nav:
   title: 组件
