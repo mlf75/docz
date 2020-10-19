@@ -1,5 +1,5 @@
 ---
-title: 数据库表联动选择
+title: 联动选择
 order: 5
 nav:
   title: 组件

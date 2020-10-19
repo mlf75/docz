@@ -1,8 +1,8 @@
 ---
-title: 数据资产目录系统组件库 - 基于 dumi、为组件开发场景而生的文档工具
+title: 组件库 - 基于 dumi、为组件开发场景而生的文档工具
 order: 10
 hero:
-  title: 数据资产目录管理系统组件文档
+  title: 组件库文档
   desc: 基于 dumi、为组件开发场景而生的文档工具
   actions:
     - text: 快速上手
