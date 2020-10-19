@@ -1,12 +1,12 @@
 ---
-title: Select选择
+title: Select
 order: 3
 nav:
   title: 组件
   order: 2
 ---
 
-## Select 选择框
+## Select
 
 ### 基本使用
 

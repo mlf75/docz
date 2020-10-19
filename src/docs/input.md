@@ -1,12 +1,12 @@
 ---
-title: Input输入框
+title: Input
 order: 1
 nav:
   title: 组件
   order: 2
 ---
 
-## Input 输入框
+## Input
 
 ### 基本使用
 

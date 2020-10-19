@@ -1,12 +1,12 @@
 ---
-title: Radio单选框
+title: Radio
 order: 4
 nav:
   title: 组件
   order: 2
 ---
 
-## Radio 单选框
+## Radio
 
 ### 基本使用
 

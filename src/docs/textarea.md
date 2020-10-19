@@ -1,12 +1,12 @@
 ---
-title: Textａrea文本
+title: Textarea
 order: 2
 nav:
   title: 组件
   order: 2
 ---
 
-## Textarea 文本框
+## Textarea
 
 ### 基本使用
 

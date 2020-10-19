@@ -1,12 +1,12 @@
 ---
-title: Markdown编辑器
+title: Markdown
 order: 1
 nav:
   title: 组件
   order: 2
 ---
 
-## Markdown 富文本 输入框
+## Markdown
 
 ### 基本使用
 
