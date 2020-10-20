@@ -39,8 +39,6 @@ function attrsTransformFrom(attrs, value) {
     result[attr] = value;
   });
 
-  console.log('complexAttrs', complexAttrs);
-
   return result;
 }
 
@@ -128,7 +126,7 @@ function getCustomeProperties(obj, requiredArr) {
   return Object.entries(obj).map(([prop, value]) => {
     const required = requiredArr
       ? requiredArr.find(item => item === prop)
-      : undefined;
+      : value.required;
     return {
       name: prop,
       ...attrsTransformTo(value),
