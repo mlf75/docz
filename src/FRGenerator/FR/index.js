@@ -5,7 +5,6 @@ import RenderField from './RenderField';
 import Wrapper from './Wrapper';
 
 const FR = ({ id = '#', preview = false }) => {
-  debugger;
   const { onItemChange, onFlattenChange, flatten } = useStore();
   const { displayType, column } = useGlobalProps();
   const item = flatten[id];
@@ -101,7 +100,7 @@ const FR = ({ id = '#', preview = false }) => {
   // TODO: list 也要算进去
   if (preview) {
     return (
-      <div style={columnStyle} className={containerClass}>
+      <div style={columnStyle} className={`${containerClass} preview`}>
         <RenderField {...fieldProps}>
           {(isObj || isList) && childrenElement}
         </RenderField>
