@@ -20,4 +20,4 @@ features:
 footer: 重庆华龙海数科技公司
 ---
 
-<video style="width: 100%; height: 'auto'" src="/public/intro.mp4" muted poster="/public/poster.png" autoplay="autoplay" loop="loop" type="video/mp4"></video>
+<video style="width: 100%; height: 'auto'" src="/intro.mp4" muted poster="/poster.png" autoplay="autoplay" loop="loop" type="video/mp4"></video>
